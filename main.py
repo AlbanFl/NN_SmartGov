@@ -117,8 +117,9 @@ def genetic_algorithm(model, nb_seconds):
     
         fileName = datetime.now().strftime("JSON/environment-%d-%m-%Y-%H-%M-%S.json")
 
-        with open(fileName, 'w') as outfile:
-            json.dump(data, outfile)
+        wfile = open(fileName, 'w')
+        wfile.write(json.dumps(data, sort_keys=True, indent=4))
+        wfile.close()
 
 
 def main(argv):
