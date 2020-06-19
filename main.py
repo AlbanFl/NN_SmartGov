@@ -7,6 +7,8 @@ from Algos import random_search
 from Algos import genetic_search
 from Algos import algo_tools
 import random
+import json
+from datetime import datetime
 
 def benchmark_random(model):
     algo = random_search.Random_search(model, 48)
@@ -37,8 +39,87 @@ def genetic_algorithm(model, nb_seconds):
         algo = genetic_search.Algo(model)
         algo.search(nb_seconds)
         result = algo.get_best_configs(1)
-        print(str(result[0].fitness_val) + " " + str(result[0].config))
+
+        allSquare = [[ [ 45.43, 4.4 ], [ 45.609, 4.4 ], [ 45.609, 4.665 ], [ 45.43, 4.665 ] ],
+            [ [ 45.609, 4.4 ], [ 45.788, 4.4 ], [ 45.788, 4.665 ], [ 45.609, 4.665 ] ],
+            [ [ 45.788, 4.4 ], [ 45.967, 4.4 ], [ 45.967, 4.665 ], [ 45.788, 4.665 ] ],
+            [ [ 45.967, 4.4 ], [ 46.146, 4.4 ], [ 46.146, 4.665 ], [ 45.967, 4.665 ] ],
+            [ [ 45.43, 4.665 ], [ 45.609, 4.665 ], [ 45.609, 4.93 ], [ 45.43, 4.93 ] ],
+            [ [ 45.609, 4.665 ], [ 45.788, 4.665 ], [ 45.788, 4.93 ], [ 45.609, 4.93 ] ],
+            [ [ 45.788, 4.665 ], [ 45.967, 4.665 ], [ 45.967, 4.93 ], [ 45.788, 4.93 ] ],
+            [ [ 45.967, 4.665 ], [ 46.146, 4.665 ], [ 46.146, 4.93 ], [ 45.967, 4.93 ] ],
+            [ [ 45.43, 4.93 ], [ 45.609, 4.93 ], [ 45.609, 5.195 ], [ 45.43, 5.195 ] ],
+            [ [ 45.609, 4.93 ], [ 45.788, 4.93 ], [ 45.788, 5.195 ], [ 45.609, 5.195 ] ],
+            [ [ 45.788, 4.93 ], [ 45.967, 4.93 ], [ 45.967, 5.195 ], [ 45.788, 5.195 ] ],
+            [ [ 45.967, 4.93 ], [ 46.146, 4.93 ], [ 46.146, 5.195 ], [ 45.967, 5.195 ] ],
+            [ [ 45.43, 5.195 ], [ 45.609, 5.195 ], [ 45.609, 5.46 ], [ 45.43, 5.46 ] ],
+            [ [ 45.609, 5.195 ], [ 45.788, 5.195 ], [ 45.788, 5.46 ], [ 45.609, 5.46 ] ],
+            [ [ 45.788, 5.195 ], [ 45.967, 5.195 ], [ 45.967, 5.46 ], [ 45.788, 5.46 ] ],
+            [ [ 45.967, 5.195 ], [ 46.146, 5.195 ], [ 46.146, 5.46 ], [ 45.967, 5.46 ] ],
+            ]
+        data = {}
+
+        count = 0
+        for i in range(len(result[0].config)): # Start counting from 1
+            if i % 3 == 0:
+                if (result[0].config[i]==0):
+                    stringSurv = "NO_SURVEILLANCE"
+                elif (result[0].config[i]==1):
+                    stringSurv = "PATROL"
+                elif (result[0].config[i]==2):
+                    stringSurv = "CAMERA"
+                elif (result[0].config[i]==3):
+                    stringSurv = "BARRIER"
+                elif (result[0].config[i]==4):
+                    stringSurv = "CHEAP_TOLL"
+                elif (result[0].config[i]==5):
+                    stringSurv = "EXPENSIVE_TOLL"
+                else :
+                    print("error with surveillance")
+
+                if (result[0].config[i+1]==0):
+                    stringPrivCrit = "CRITAIR_1"
+                elif (result[0].config[i+1]==1):
+                    stringPrivCrit = "CRITAIR_2"
+                elif (result[0].config[i+1]==2):
+                    stringPrivCrit = "CRITAIR_3"
+                elif (result[0].config[i+1]==3):
+                    stringPrivCrit = "CRITAIR_4"
+                elif (result[0].config[i+1]==4):
+                    stringPrivCrit = "CRITAIR_5"
+                elif (result[0].config[i+1]==5):
+                    stringPrivCrit = "NONE"
+                else :
+                    print("error with private criteria")
+                
+                if (result[0].config[i+2]==0):
+                    stringDeliCrit = "CRITAIR_1"
+                elif (result[0].config[i+2]==1):
+                    stringDeliCrit = "CRITAIR_2"
+                elif (result[0].config[i+2]==2):
+                    stringDeliCrit = "CRITAIR_3"
+                elif (result[0].config[i+2]==3):
+                    stringDeliCrit = "CRITAIR_4"
+                elif (result[0].config[i+2]==4):
+                    stringDeliCrit = "CRITAIR_5"
+                elif (result[0].config[i+2]==5):
+                    stringDeliCrit = "NONE"
+                else :
+                    print("error with deliveri criteria")
+
+                squareNumber = str(count)
+                data[squareNumber]= {}
+                data[squareNumber]["perimeter"]= allSquare[count]
+                count+=1
+                data[squareNumber]["private criteria"]= stringPrivCrit
+                data[squareNumber]["surveillance"]= stringSurv
+                data[squareNumber]["delivery criteria"]= stringDeliCrit
     
+        fileName = datetime.now().strftime("JSON/environment-%d-%m-%Y-%H-%M-%S.json")
+
+        with open(fileName, 'w') as outfile:
+            json.dump(data, outfile)
+
 
 def main(argv):
     model = None
