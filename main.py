@@ -2,7 +2,6 @@ import sys, getopt
 import numpy as np
 
 from Models import model_one_NN
-from Models import model_two_NN
 from Algos import random_search
 from Algos import genetic_search
 from Algos import algo_tools
@@ -43,27 +42,32 @@ def genetic_algorithm(model, nb_seconds):
 def main(argv):
     model = None
     try:
-        opts, args = getopt.getopt(argv,"htu",["help", "train", "use", "experiment"])
+        opts, args = getopt.getopt(argv,"ht:u:",["help", "train", "use"])
     except getopt.GetoptError:
       print("Erreur d'arguments. Lancez script.py -h pour plus d'information.")
       sys.exit()
     for opt, arg in opts:
         if opt in ('-h', "-help"):
             print("Bienvenue dans l'aide de notre script")
-            print("Si vous souhaitez entrainer un modele : main.py -train")
-            print("Si vous souhaitez utiliser un modèle déjà entrainé : main.py -use")
+            print("Si vous souhaitez entrainer un modele : main.py -t [file]")
+            print("Si vous souhaitez utiliser un modèle déjà entrainé : main.py -u [file]")
             sys.exit()
         elif opt in ("-t", "-train"):
-            #model = model_two_NN.Model_two_NN()
-            model = model_one_NN.Model_one_NN()
+            inputFile = arg
+            model = model_one_NN.Model_one_NN(False, inputFile)
             model.save()
+            sys.exit()
+
+        elif opt in("-u", "-use"):
+            #If we dont train it, then we load it from a file
+            model = model_one_NN.Model_one_NN(True, "model.h5")
     
-    if model == None:
-        #If we dont train it, then we load it from a file
-        model = model_one_NN.Model_one_NN("model.h5")
+    if model is None:
+        print("Argument manquant. Utilisez python -h pour plus d'informations.")
+        sys.exit()
 
 
-    genetic_algorithm(model, 90)
+    genetic_algorithm(model, 60)
 
 
 if __name__ == "__main__":

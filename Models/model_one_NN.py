@@ -8,16 +8,19 @@ import random
 
 
 class Model_one_NN:
-    def __init__(self, file_name=None):
-        if (file_name):
+    def __init__(self, isLoading, file_name=None):
+        if isLoading:
             self.model = keras.models.load_model(file_name)
         else:
-            self.create_model()
-            self.train_model()
+            self.create_model(file_name)
+            self.train_model(file_name)
 
 
-    def train_model(self):
-        f = open("config.txt", "r")
+    def train_model(self, file_name = None):
+        if file_name:
+            f = open(file_name, "r")
+        else:
+            f = open("config.txt", "r")
         content = f.readlines()
         f.close()
         x_train = []
@@ -50,7 +53,10 @@ class Model_one_NN:
         self.test_validation()
             
 
-    def create_model(self):
+    def create_model(self, file_name):
+        if file_name:
+            inputSize = (len(open(file_name, "r").readlines()[0]) - 3) / 2
+
         self.model = keras.Sequential([
             keras.layers.Dense(64, input_shape=(48,), activation='relu'),
             keras.layers.Dense(32, activation='relu'),
