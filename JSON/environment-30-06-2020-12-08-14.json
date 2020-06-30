@@ -1,0 +1,370 @@
+{
+    "0": {
+        "delivery criteria": "NONE",
+        "perimeter": [
+            [
+                45.43,
+                4.4
+            ],
+            [
+                45.609,
+                4.4
+            ],
+            [
+                45.609,
+                4.665
+            ],
+            [
+                45.43,
+                4.665
+            ]
+        ],
+        "private criteria": "CRITAIR_1",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "1": {
+        "delivery criteria": "CRITAIR_3",
+        "perimeter": [
+            [
+                45.609,
+                4.4
+            ],
+            [
+                45.788,
+                4.4
+            ],
+            [
+                45.788,
+                4.665
+            ],
+            [
+                45.609,
+                4.665
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "10": {
+        "delivery criteria": "CRITAIR_1",
+        "perimeter": [
+            [
+                45.788,
+                4.93
+            ],
+            [
+                45.967,
+                4.93
+            ],
+            [
+                45.967,
+                5.195
+            ],
+            [
+                45.788,
+                5.195
+            ]
+        ],
+        "private criteria": "CRITAIR_5",
+        "surveillance": "BARRIER"
+    },
+    "11": {
+        "delivery criteria": "NONE",
+        "perimeter": [
+            [
+                45.967,
+                4.93
+            ],
+            [
+                46.146,
+                4.93
+            ],
+            [
+                46.146,
+                5.195
+            ],
+            [
+                45.967,
+                5.195
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "12": {
+        "delivery criteria": "CRITAIR_1",
+        "perimeter": [
+            [
+                45.43,
+                5.195
+            ],
+            [
+                45.609,
+                5.195
+            ],
+            [
+                45.609,
+                5.46
+            ],
+            [
+                45.43,
+                5.46
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "CHEAP_TOLL"
+    },
+    "13": {
+        "delivery criteria": "CRITAIR_1",
+        "perimeter": [
+            [
+                45.609,
+                5.195
+            ],
+            [
+                45.788,
+                5.195
+            ],
+            [
+                45.788,
+                5.46
+            ],
+            [
+                45.609,
+                5.46
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "CHEAP_TOLL"
+    },
+    "14": {
+        "delivery criteria": "CRITAIR_3",
+        "perimeter": [
+            [
+                45.788,
+                5.195
+            ],
+            [
+                45.967,
+                5.195
+            ],
+            [
+                45.967,
+                5.46
+            ],
+            [
+                45.788,
+                5.46
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "NO_SURVEILLANCE"
+    },
+    "15": {
+        "delivery criteria": "NONE",
+        "perimeter": [
+            [
+                45.967,
+                5.195
+            ],
+            [
+                46.146,
+                5.195
+            ],
+            [
+                46.146,
+                5.46
+            ],
+            [
+                45.967,
+                5.46
+            ]
+        ],
+        "private criteria": "CRITAIR_4",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "2": {
+        "delivery criteria": "CRITAIR_3",
+        "perimeter": [
+            [
+                45.788,
+                4.4
+            ],
+            [
+                45.967,
+                4.4
+            ],
+            [
+                45.967,
+                4.665
+            ],
+            [
+                45.788,
+                4.665
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "BARRIER"
+    },
+    "3": {
+        "delivery criteria": "CRITAIR_2",
+        "perimeter": [
+            [
+                45.967,
+                4.4
+            ],
+            [
+                46.146,
+                4.4
+            ],
+            [
+                46.146,
+                4.665
+            ],
+            [
+                45.967,
+                4.665
+            ]
+        ],
+        "private criteria": "CRITAIR_3",
+        "surveillance": "NO_SURVEILLANCE"
+    },
+    "4": {
+        "delivery criteria": "CRITAIR_4",
+        "perimeter": [
+            [
+                45.43,
+                4.665
+            ],
+            [
+                45.609,
+                4.665
+            ],
+            [
+                45.609,
+                4.93
+            ],
+            [
+                45.43,
+                4.93
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "5": {
+        "delivery criteria": "CRITAIR_5",
+        "perimeter": [
+            [
+                45.609,
+                4.665
+            ],
+            [
+                45.788,
+                4.665
+            ],
+            [
+                45.788,
+                4.93
+            ],
+            [
+                45.609,
+                4.93
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "BARRIER"
+    },
+    "6": {
+        "delivery criteria": "CRITAIR_1",
+        "perimeter": [
+            [
+                45.788,
+                4.665
+            ],
+            [
+                45.967,
+                4.665
+            ],
+            [
+                45.967,
+                4.93
+            ],
+            [
+                45.788,
+                4.93
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "EXPENSIVE_TOLL"
+    },
+    "7": {
+        "delivery criteria": "CRITAIR_1",
+        "perimeter": [
+            [
+                45.967,
+                4.665
+            ],
+            [
+                46.146,
+                4.665
+            ],
+            [
+                46.146,
+                4.93
+            ],
+            [
+                45.967,
+                4.93
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "CAMERA"
+    },
+    "8": {
+        "delivery criteria": "NONE",
+        "perimeter": [
+            [
+                45.43,
+                4.93
+            ],
+            [
+                45.609,
+                4.93
+            ],
+            [
+                45.609,
+                5.195
+            ],
+            [
+                45.43,
+                5.195
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "PATROL"
+    },
+    "9": {
+        "delivery criteria": "NONE",
+        "perimeter": [
+            [
+                45.609,
+                4.93
+            ],
+            [
+                45.788,
+                4.93
+            ],
+            [
+                45.788,
+                5.195
+            ],
+            [
+                45.609,
+                5.195
+            ]
+        ],
+        "private criteria": "NONE",
+        "surveillance": "CHEAP_TOLL"
+    }
+}

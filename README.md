@@ -20,4 +20,4 @@ Once your neural network is trained, you can use it to find the best configurati
 
 `python main.py -u <file>`
 
-The file in argument is the one containing your neural network (probably `model.h5` if you did not rename it). It will load the neural network, and then launch a the research of best configurations using genetic algorithm for 60s.
+The file in argument is the one containing your neural network (probably `model.h5` if you did not rename it). It will load the neural network, and then launch a the research of best configurations using genetic algorithm for 60s. It will create a new json file in the JSON folder, with a configuration that can be visualised with a [lez-viewer](https://github.com/smartgov-liris/lez-viewer-Thomas).

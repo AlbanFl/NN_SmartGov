@@ -38,6 +38,7 @@ def genetic_algorithm(model, nb_seconds):
         algo = genetic_search.Algo(model)
         algo.search(nb_seconds)
         result = algo.get_best_configs(1)
+        print(str(result[0].fitness_val) + " " + str(result[0].config) )
 
         allSquare = [[ [ 45.43, 4.4 ], [ 45.609, 4.4 ], [ 45.609, 4.665 ], [ 45.43, 4.665 ] ],
             [ [ 45.609, 4.4 ], [ 45.788, 4.4 ], [ 45.788, 4.665 ], [ 45.609, 4.665 ] ],
